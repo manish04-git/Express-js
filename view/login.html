@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — ShopEase</title>
+  <style>
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#102a43;background:#f1f5f9}
+    a{color:inherit;text-decoration:none}
+
+    /* Layout */
+    .center-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{width:100%;max-width:420px;background:#fff;border-radius:12px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+
+    /* Header */
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .logo{width:44px;height:44px;border-radius:10px;background:#06b6d4;color:#042;display:grid;place-items:center;font-weight:800}
+    .brand h1{font-size:18px}
+    .brand p{font-size:12px;color:#64748b}
+
+    /* Form */
+    form{margin-top:6px}
+    label{display:block;font-size:13px;color:#334155;margin-bottom:6px}
+    input[type="email"],input[type="password"]{width:100%;padding:12px 14px;border-radius:8px;border:1px solid #e6eef6;background:#fbfdff;font-size:14px}
+    .field{margin-bottom:12px}
+    .row{display:flex;align-items:center;justify-content:space-between}
+    .checkbox{display:flex;align-items:center;gap:8px}
+    .btn{display:inline-block;width:100%;text-align:center;padding:12px;border-radius:10px;background:#0b1220;color:#fff;font-weight:700;border:none;cursor:pointer}
+    .secondary{background:transparent;border:1px solid #e6eef6;color:#0f172a;padding:10px;border-radius:10px}
+
+    .sep{display:flex;align-items:center;gap:12px;margin:18px 0;color:#94a3b8}
+    .sep:before,.sep:after{content:"";flex:1;height:1px;background:#e6eef6}
+
+    .socials{display:flex;gap:8px}
+    .socials button{flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef6;background:#fff}
+
+    .muted{font-size:13px;color:#64748b;text-align:center;margin-top:14px}
+    .muted a{color:#0b1220;font-weight:600}
+
+    /* Small note */
+    .note{font-size:13px;color:#475569;margin-top:8px}
+
+    @media (max-width:420px){.card{padding:20px}}
+  </style>
+</head>
+<body>
+  <div class="center-wrap">
+    <div class="card" role="main" aria-labelledby="login-heading">
+      <div class="brand">
+        <div class="logo">SE</div>
+        <div>
+          <h1 id="login-heading">Welcome back</h1>
+          <p>Sign in to continue to ShopEase</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleSubmit(event)" novalidate>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div style="position:relative">
+            <input id="password" name="password" type="password" placeholder="Enter your password" required />
+            <button type="button" id="toggle" aria-label="Show password" style="position:absolute;right:8px;top:7px;background:transparent;border:none;cursor:pointer;font-weight:700">Show</button>
+          </div>
+        </div>
+
+        <div class="field row">
+          <label class="checkbox"><input type="checkbox" id="remember" name="remember" /> <span style="font-size:13px;color:#334155">Remember me</span></label>
+          <a href="#" style="font-size:13px;color:#0b1220;font-weight:600">Forgot?</a>
+        </div>
+
+        <div class="field">
+          <button class="btn" type="submit">Sign in</button>
+        </div>
+
+        <div class="sep">Or continue with</div>
+
+        <div class="socials">
+          <button type="button" class="secondary">Google</button>
+          <button type="button" class="secondary">GitHub</button>
+        </div>
+
+        <div class="muted">Don't have an account? <a href="signup.html">Create one</a></div>
+      </form>
+
+      <p class="note">This is a static template. Connect to your backend or add client-side validation as needed.</p>
+    </div>
+  </div>
+
+  <script>
+    const pw = document.getElementById('password');
+    const toggle = document.getElementById('toggle');
+    toggle.addEventListener('click', () => {
+      if (pw.type === 'password') { pw.type = 'text'; toggle.textContent = 'Hide'; toggle.setAttribute('aria-label','Hide password') }
+      else { pw.type = 'password'; toggle.textContent = 'Show'; toggle.setAttribute('aria-label','Show password') }
+    });
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = pw.value.trim();
+      if(!email || !password){
+        alert('Please enter both email and password.');
+        return;
+      }
+      // Placeholder - replace with real authentication call
+      alert('Submitted: ' + email + '\n(Replace this with a real login flow)');
+    }
+  </script>
+</body>
+</html>
