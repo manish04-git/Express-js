@@ -21,12 +21,11 @@ app.get("/products", (req, res) => {
 
 app.get("/login", (req, res) => {
   res.send(`
-    <form action="/submit" method="POST">
+  <form action="/submit" method="POST">
   <input type="text" placeholder="enter your name" name="name">
   <input type="password" placeholder="enter your password" name="password">
-
   <button>submit</button>
-    </form>
+  </form>
     `);
 });
 app.post("/submit", (req, res) => {
@@ -35,3 +34,4 @@ app.post("/submit", (req, res) => {
 });
 
 app.listen(port);
+
