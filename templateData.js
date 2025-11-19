@@ -14,4 +14,10 @@ app.post("/submit-user",(req,res)=>{
  
 })  
 
+app.get("/users",(req,res)=>{
+  const users=['manish','hardik','aayushi','priyanshi','mahendra'];
+  res.render('users',{users:users,isLogin:false});
+})
+
+
 app.listen(port);
