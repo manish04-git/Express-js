@@ -21,13 +21,13 @@ res.send(filterData)
 
 })
 
-app.get("/username/:name",(req,res)=>{
+/*app.get("/username/:name",(req,res)=>{
   const name=req.params.name;
   let filterData=userData.filter((user)=>{
     return user.name.toLowerCase()==name.toLowerCase();
     res.end(filterData)
   })
-})
+})*/
 
 
 
