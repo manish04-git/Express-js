@@ -41,7 +41,8 @@ client.connect().then((connection) => {
     res.send({ message: "data stored", success: true, result });
   });
 
-  // delete data from mongodb 
+  
+// delete data from mongodb 
 app.delete("/delete/:id",async(req,res)=>{
   console.log(req.params.id);
   
@@ -61,7 +62,20 @@ app.delete("/delete/:id",async(req,res)=>{
     })
   }
 })
+// delete with buton
+app.get("/ui/delete/:id",async(req,res)=>{
+  console.log(req.params.id);
+  
+  const collection=db.collection('teachers');
+  const result=await collection.deleteOne({_id: new ObjectId(req.params.id)})
+
+  if(result){
+    res.send('<h1>data deleted successfully</h1>')
+    
+  }else{
+    res.send('<h1>failed</h1>')
+  }
+})
 
 });
-
 app.listen(3200);

@@ -30,7 +30,7 @@ app.get("/add",(req,res)=>{
 
 app.post("/add-teacher",async(req,res)=>{
  // console.log(req.body);
-
+ 
   const collection=db.collection("teachers");
   const result=await collection.insertOne(req.body)
   //const result=await collection.find().toArray();

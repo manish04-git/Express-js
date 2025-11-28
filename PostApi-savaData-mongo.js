@@ -1,4 +1,4 @@
-import { log } from 'console';
+
 import express from 'express';
 import { MongoClient } from 'mongodb';
 const app=express();
@@ -31,7 +31,6 @@ app.post("/add-teacher-api",async(req,res)=>{
   const collection=db.collection("teachers");
 const result=await collection.insertOne(req.body)
   
-
   //res.send({"message":"success"});
   //res.send({"message":req.body});
  // res.send({"message":result})

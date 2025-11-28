@@ -24,7 +24,4 @@ res.render("teacher",{result})
 
 })
 
-
-
-
 app.listen(3200);
