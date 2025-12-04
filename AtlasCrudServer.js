@@ -19,7 +19,7 @@ app.post("/students", async (req, res) => {
     const { name, age, email } = req.body;
 
     if (!name || !age || !email) {
-      return res.status(400).json({ message: "name, age and email are required" });
+      return res.status(400).json({ message: "name, age and email are required"});
     }
 
     const result = await students.insertOne({ name, age, email });

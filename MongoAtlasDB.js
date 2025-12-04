@@ -15,7 +15,7 @@ export async function connectDB() {
       dbConnection = client.db("school");  // database name
     }
     return dbConnection;
-  } catch (err) {
+  } catch (err){
     console.error("MongoDB Connection Failed:", err);
     throw err;
   }
