@@ -1,7 +1,7 @@
 // db.js
 import { MongoClient } from "mongodb";
 
-const url = "mongodb+srv://momo:M%40nish0419@momo.btpnxp2.mongodb.net/?appName=Momo"
+const url = "mongodb+srv://momo:<password>@momo.btpnxp2.mongodb.net/?appName=Momo"
 
 const client = new MongoClient(url);
 
