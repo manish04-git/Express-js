@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const url="mongodb+srv://momo:M%40nish0419@momo.btpnxp2.mongodb.net/?appName=Momo"
+const url="mongodb+srv://momo:<passward>@momo.btpnxp2.mongodb.net/?appName=Momo"
 
 const database="school";
 const collection="students";
